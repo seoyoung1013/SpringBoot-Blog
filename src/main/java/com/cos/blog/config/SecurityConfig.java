@@ -9,7 +9,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
-    @Bean
+    @Bean //IoC
     BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
