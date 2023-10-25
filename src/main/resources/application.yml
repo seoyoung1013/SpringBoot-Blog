@@ -2,10 +2,6 @@ server:
   port: 8181
   servlet:
     context-path: /
-    encoding:
-      charset: UTF-8
-      enabled: true
-      force: true
     
 spring:
   mvc:
@@ -25,10 +21,20 @@ spring:
       ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    show-sql: true
+      use-new-id-generator-mappings: false
+    #show-sql: true
     properties:
       hibernate.format_sql: true
 
   jackson:
     serialization:
       fail-on-empty-beans: false
+      
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+cos:
+  key: cos1234
