@@ -2,12 +2,18 @@ server:
   port: 8181
   servlet:
     context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
     
 spring:
   mvc:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
+  profiles:
+     include: API-KEY
       
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -29,12 +35,14 @@ spring:
   jackson:
     serialization:
       fail-on-empty-beans: false
-      
-  http:
-    encoding:
-      charset: UTF-8
-      enabled: true
-      force: true
 
+openai:
+  api-key: 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
+
+  chatgpt:
+    api-key: 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
+      
 cos:
   key: cos1234
+  
+  javax.net.ssl.keyStoreType: TLSv1.2

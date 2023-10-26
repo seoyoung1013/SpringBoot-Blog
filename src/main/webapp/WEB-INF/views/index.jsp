@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <%@ include file="layout/header.jsp"%>
 
 <section class="jumbotron text-center">
@@ -40,11 +39,8 @@
   	<c:otherwise>
   		<li class="page-item"><a class="page-link" href="?page=${boards.number+1}">Next</a></li>
   	</c:otherwise>
-  </c:choose>
-  
+  </c:choose>  
 </ul>
-	
-
 </div>
 
 <%@ include file="layout/footer.jsp"%>
