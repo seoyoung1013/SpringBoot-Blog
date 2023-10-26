@@ -18,7 +18,7 @@ public class AIController {
     public String getGPT3Response() {
         // OpenAI API 엔드포인트 및 API 키 설정
         String apiUrl = "https://api.openai.com/v1/chat/completions";
-        String apiKey = "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"; // OpenAI API 키를 여기에 입력하세요.
+        String apiKey = "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"; // OpenAI API 키를 여기에 입력하세요.
 
         System.setProperty("https.protocols", "TLSv1.2");
         // API 요청 데이터 설정
