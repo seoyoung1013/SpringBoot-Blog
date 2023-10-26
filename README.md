@@ -1,5 +1,6 @@
-# SpringBoot-Blog
-스프링 부트 with JPA 블로그 프로젝트
+# SpringBoot Project
+스프링 부트 with JPA
+SW,AI 경진대회 참가 프로젝트
 
 # 스프링 SQL
 
