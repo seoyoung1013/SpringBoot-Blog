@@ -36,12 +36,6 @@ spring:
     serialization:
       fail-on-empty-beans: false
 
-openai:
-  api-key: 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
-
-  chatgpt:
-    api-key: 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
-      
 cos:
   key: cos1234
   
