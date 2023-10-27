@@ -5,10 +5,6 @@
     <div class="container">
       <h1>너와 내가 만나 우리가 되는 공간</h1>
       <p class="lead text-muted">스프링 부트를 활용한 국내 여행 동행자 매칭 웹 사이트입니다. <br>많은 사람들이 여행을 즐기고 있으며, <br> 적합한 여행 파트너를 찾는 것은 어려운 일입니다. <br> 이 웹 사이트를 통해 나와 맞는 동행자를 찾아 떠나세요!</p>
-      <p>
-        <a href="#" class="btn btn-primary my-2">Main call to action</a>
-        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-      </p>
     </div>
   </section>
 

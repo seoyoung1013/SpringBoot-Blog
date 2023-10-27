@@ -10,7 +10,6 @@ public class ViewController {
     public String showResult(Model model) {
         AIController aiController = new AIController();
         String result = aiController.getGPT3Response();
-        System.out.println(result);
         model.addAttribute("result", result);
 
         return "result";

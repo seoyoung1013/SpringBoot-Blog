@@ -20,11 +20,11 @@ public class AIController {
     public String getGPT3Response() {
         // OpenAI API 엔드포인트 및 API 키 설정
         String apiUrl = "https://api.openai.com/v1/chat/completions";
-        String apiKey = ""; // OpenAI API 키를 여기에 입력하세요.
+        String apiKey = "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"; // OpenAI API 키를 여기에 입력하세요.
 
         System.setProperty("https.protocols", "TLSv1.2");
         // API 요청 데이터 설정
-        String prompt = "오늘 날씨에 어울리는 국내 여행지를 추천해줘";
+        String prompt = "오늘 날씨에 어울리는 국내 여행지를 3가지 정도 추천해줘";
         String requestBody = "{\"model\":\"gpt-3.5-turbo\",\"messages\":[{\"role\":\"system\",\"content\":\"무엇이 궁금하시나요?\"},{\"role\":\"user\",\"content\":\"" + prompt + "\"}],\"max_tokens\":1000}";
 
         HttpHeaders headers = new HttpHeaders();
@@ -47,6 +47,7 @@ public class AIController {
                 JSONObject choice = choices.getJSONObject(0);
                 JSONObject message = choice.getJSONObject("message");
                 content = message.getString("content");
+                content = content.replaceAll("\n\n", "<br>");
             }
         } catch (JSONException e) {
             e.printStackTrace();

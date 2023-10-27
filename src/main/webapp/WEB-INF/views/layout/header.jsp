@@ -50,16 +50,13 @@
     <a class="navbar-brand" href="/">You, Me and We</a>
     <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">여행계획등록</a>
+              <a class="nav-link" href="/">홈</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/showResult">오늘의 여행</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">국내여행지추천</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">여행자</a>
+              <a class="nav-link" href="#">인기 여행자</a>
             </li>
             </ul>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
