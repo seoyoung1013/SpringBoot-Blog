@@ -1,7 +1,11 @@
 package com.cos.blog.service;
 
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,6 +14,7 @@ import com.cos.blog.model.Board;
 import com.cos.blog.model.User;
 import com.cos.blog.repository.BoardRepository;
 import com.cos.blog.repository.ReplyRepository;
+import com.cos.blog.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -19,7 +24,12 @@ public class BoardService {
 	
 	private final BoardRepository boardRepository;
 	private final ReplyRepository replyRepository;
+	private final UserRepository userRepository;
 	
+	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
+
 //	public BoardService(BoardRepository bRepo, ReplyRepository rRepo) {
 //		this.boardRepository = bRepo;
 //		this.replyRepository = rRepo;
@@ -44,6 +54,24 @@ public class BoardService {
 					return new IllegalArgumentException("글 상세보기 실패 : 아이디를 찾을 수 없습니다.");
 				});
 	}
+	
+	@Transactional(readOnly = true)
+	public Board 작성글목록(int userId){
+		return boardRepository.findById(userId).orElseThrow(()->{
+			return new IllegalArgumentException("글 상세보기 실패 : 아이디를 찾을 수 없습니다.");
+		});
+	}
+
+	@Transactional
+	public User 작성자정보(int userId) {
+	    // 사용자 ID를 사용하여 사용자 정보를 찾아 반환
+	    return userRepository.findById(userId).orElseThrow(() -> {
+	        return new IllegalArgumentException("사용자를 찾을 수 없습니다.");
+	    });
+	}
+
+
+	
 	
 	@Transactional
 	public void 글삭제하기(int id) {
@@ -72,4 +100,5 @@ public class BoardService {
 	public void 댓글삭제(int replyId) {
 		replyRepository.deleteById(replyId);
 	}
+	
 }

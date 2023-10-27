@@ -60,6 +60,8 @@ public class UserService {
 			persistance.setLocation(user.getLocation());
 			persistance.setTravelStyle(user.getTravelStyle());
 			persistance.setMbti(user.getMbti());
+			persistance.setIntroduction(user.getIntroduction());
+			persistance.setAge(user.getAge());
 		}
 		
 		// 회원수정 함수 종료시 = 서비스 종료 = 트랜잭션 종료 = commit 이 자동으로 됩니다.

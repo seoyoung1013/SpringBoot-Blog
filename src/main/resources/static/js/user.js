@@ -15,7 +15,9 @@ let index = {
             email: $("#email").val(),
             location: $("#location").val(),
             travelStyle: $("#travelStyle").val(),
-            mbti: $("#mbti").val()
+            mbti: $("#mbti").val(),
+            introduction : $("#introduction").val(),
+            age : $("#age").val()
         };
 
         $.ajax({
@@ -45,7 +47,9 @@ let index = {
             email: $("#email").val(),
             location: $("#location").val(),
             travelStyle: $("#travelStyle").val(),
-            mbti: $("#mbti").val()
+            mbti: $("#mbti").val(),
+            introduction : $("#introduction").val(),
+            age : $("#age").val()
         };
 
         $.ajax({

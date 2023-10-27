@@ -1,7 +1,6 @@
 package com.cos.blog.model;
 
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,8 +9,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.AllArgsConstructor;
@@ -41,6 +40,9 @@ public class User {
 	@Column(nullable = false, length = 50)
 	private String email; // myEmail, my_email
 	
+	@Column(nullable = false)
+	private int age; // 나이
+	
 	@Column(length = 100)
 	private String location; // 사는 지역
 
@@ -49,6 +51,10 @@ public class User {
 
 	@Column(length = 10)
 	private String mbti; // MBTI
+
+	@Lob
+	@Column(columnDefinition = "TEXT")
+	private String introduction;
 
 
 	// @ColumnDefault("user")

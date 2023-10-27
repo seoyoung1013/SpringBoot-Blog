@@ -12,6 +12,9 @@ let index = {
 			$("#btn-reply-save").on("click", ()=>{ 
 				this.replySave();
 			});
+			$("#btn-show-profile").on("click", ()=>{ 
+				this.showProfile();
+			});
 		},
 
 		save: function(){
@@ -104,6 +107,28 @@ let index = {
 				alert(JSON.stringify(error));
 			}); 
 		},
+
+		showProfile: function() {
+			// 'user/profile' 페이지로 userId를 POST 요청으로 전달하여 이동합니다.
+			$("#btn-show-profile").on("click", function() {
+				let userId = $(this).data("user-id");
+
+				$.ajax({
+					type: "GET", // GET 요청으로 변경
+					url: `/user/profileInfo`, // GET 요청을 수신할 엔드포인트 URL
+					data: { userId: userId }
+				}).done(function(resp) {
+					location.href = `/user/profile`;
+				}).fail(function(error) {
+					// 실패 시 동작
+					alert("실패");
+				});  
+			});
+		},
+		
+		
+		
+		
 }
 
 index.init();

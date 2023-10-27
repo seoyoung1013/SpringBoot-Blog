@@ -57,7 +57,6 @@ public class PrincipalDetail implements UserDetails{
 	// 계정이 갖고있는 권한 목록을 리턴한다. (권한이 여러개 있을 수 있어서 루프를 돌아야 하는데 우리는 한개만)
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		
 		Collection<GrantedAuthority> collectors = new ArrayList<>();
 		collectors.add(()->{ return "ROLE_"+user.getRole();});
 		

@@ -57,6 +57,9 @@
         <label for="password">Password</label>
         <input type="password" name="password" class="form-control" placeholder="Enter password" id="password">
         
+         <label for="age">Age</label>
+        <input type="text" id="age" class="form-control" placeholder="Enter age" name="age">
+        
         <label for="email">Email</label>
         <input type="email" id="email" class="form-control" placeholder="Enter email" name="email">
 
@@ -85,6 +88,9 @@
             <option value="ENFJ">ENFJ</option>
             <option value="ENTJ">ENTJ</option>
         </select>
+        
+        <label for="Introduction">Introduction</label>
+        <input type="text" id="introduction" class="form-control" placeholder="Enter introduction" name="introduction" rows="3" >
         
         <button id="btn-save" class="btn btn-primary" >회원가입</button>
     </form>

@@ -11,14 +11,17 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import com.cos.blog.model.KakaoProfile;
 import com.cos.blog.model.OAuthToken;
 import com.cos.blog.model.User;
+import com.cos.blog.service.BoardService;
 import com.cos.blog.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -39,6 +42,11 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private BoardService boardService;
+	
+	User userInfo;
 	
 	@GetMapping("/auth/joinForm")
 	public String joinForm() {
@@ -162,4 +170,17 @@ public class UserController {
 	public String updateForm() {	
 	  return "user/updateForm";
 	}
+	
+	@GetMapping("/user/profileInfo")
+	public String profile(@RequestParam("userId") int userId, Model model) {
+	    userInfo = boardService.작성자정보(userId); // 작성자 정보 메소드 호출	    
+	    return "redirect:/user/profile";
+	}
+	
+	@GetMapping("/user/profile")
+	public String profile(Model model) {
+		model.addAttribute("userInfo", userInfo); // 모델에 사용자 정보 추가
+		return "/user/profileInfo";
+	}
+
 }
