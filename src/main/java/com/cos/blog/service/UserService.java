@@ -57,6 +57,9 @@ public class UserService {
 			String encPassword = encoder.encode(rawPassword);
 			persistance.setPassword(encPassword);
 			persistance.setEmail(user.getEmail());
+			persistance.setLocation(user.getLocation());
+			persistance.setTravelStyle(user.getTravelStyle());
+			persistance.setMbti(user.getMbti());
 		}
 		
 		// 회원수정 함수 종료시 = 서비스 종료 = 트랜잭션 종료 = commit 이 자동으로 됩니다.

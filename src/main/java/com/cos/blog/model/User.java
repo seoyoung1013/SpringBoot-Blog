@@ -40,6 +40,16 @@ public class User {
 	
 	@Column(nullable = false, length = 50)
 	private String email; // myEmail, my_email
+	
+	@Column(length = 100)
+	private String location; // 사는 지역
+
+	@Column(length = 100)
+	private String travelStyle; // 선호하는 여행 스타일
+
+	@Column(length = 10)
+	private String mbti; // MBTI
+
 
 	// @ColumnDefault("user")
 	// DB는 RoleType이라는 게 없다.
