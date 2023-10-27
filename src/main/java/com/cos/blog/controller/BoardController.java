@@ -17,7 +17,7 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
-	// 컨트롤로에서 세션을 어떻게 찾는지?
+	// 컨트롤러에서 세션을 어떻게 찾는지?
 	// @AuthenticationPrincipal PrincipalDetail principal
 	@GetMapping({"", "/"})
 	public String index(Model model, @PageableDefault(size=3, sort="id", direction = Sort.Direction.DESC) Pageable pageable) {  
