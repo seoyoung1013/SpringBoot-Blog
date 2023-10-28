@@ -2,6 +2,10 @@ package com.cos.blog.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
+import com.cos.blog.model.Board;
 import com.cos.blog.model.KakaoProfile;
 import com.cos.blog.model.OAuthToken;
 import com.cos.blog.model.User;
@@ -47,6 +52,7 @@ public class UserController {
 	private BoardService boardService;
 	
 	User userInfo;
+	Page<Board> boardContent;
 	
 	@GetMapping("/auth/joinForm")
 	public String joinForm() {
@@ -172,14 +178,16 @@ public class UserController {
 	}
 	
 	@GetMapping("/user/profileInfo")
-	public String profile(@RequestParam("userId") int userId, Model model) {
-	    userInfo = boardService.작성자정보(userId); // 작성자 정보 메소드 호출	    
+	public String profile(@RequestParam("userId") int userId, @PageableDefault(size=3, sort="id", direction = Sort.Direction.DESC) Pageable pageable) {
+		boardContent = boardService.작성글목록(userId, pageable);
+	    userInfo = boardService.작성자정보(userId);    
 	    return "redirect:/user/profile";
 	}
 	
 	@GetMapping("/user/profile")
 	public String profile(Model model) {
-		model.addAttribute("userInfo", userInfo); // 모델에 사용자 정보 추가
+		model.addAttribute("boardContent", boardContent.getContent());
+		model.addAttribute("userInfo", userInfo);
 		return "/user/profileInfo";
 	}
 

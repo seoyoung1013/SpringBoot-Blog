@@ -1,15 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="layout/header.jsp"%>
+<%@ include file="../layout/header.jsp"%>
 
-<main role="main">
-
-    <section class="jumbotron text-center">
-        <div class="container">
-          <h2>ChatGPT가 추천해주는 국내 여행 장소는? </h2>
-          <p class="lead text-muted" style="font-size:medium">${result}</p>
-        </div>
-      </section>
-    
+<main role="main">    
   
     <div class="album py-5 bg-light">
       <div class="container">
@@ -23,7 +15,7 @@
 			        <p class="card-text">서울은 한국의 화려한 수도로, 현대적인 도시와 전통적인 문화가 아름답게 공존하는 매혹적인 여행지입니다.</p>
 			        <div class="d-flex justify-content-between align-items-center">
 			            <div class="btn-group">
-			                <button type="button" class="btn btn-sm btn-outline-secondary" id="seoul">View</button>
+			                <a href="/tour/tourList/1" class="btn btn-primary">View</a>
 			                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 			            </div>
 			            <small class="text-muted">Seoul</small>
@@ -40,7 +32,7 @@
 			        <p class="card-text">부산은 해안 도시로 아름다운 해변, 신선한 해산물, 다채로운 문화 축제와 함께 여행객들에게 인기 있는 명소입니다.</p>
 			        <div class="d-flex justify-content-between align-items-center">
 			            <div class="btn-group">
-			                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+			                <a href="/tour/tourList/6" class="btn btn-primary">View</a>
 			                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 			            </div>
 			            <small class="text-muted">Busan</small>
@@ -57,7 +49,7 @@
 			        <p class="card-text">제주도는 푸른 바다, 아름다운 자연 경치, 역사적인 명소로 자연과 문화를 만끽할 수 있는 낙원입니다.</p>
 			        <div class="d-flex justify-content-between align-items-center">
 			            <div class="btn-group">
-			                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+			                <a href="/tour/tourList/39" class="btn btn-primary">View</a>
 			                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 			            </div>
 			            <small class="text-muted">Jeju</small>
@@ -74,7 +66,7 @@
 			        <p class="card-text">인천은 해변, 섬, 역사적인 명소, 현대적인 도시의 조화로 한국의 다양한 경험을 제공하는 매력적인 여행지입니다.</p>
 			        <div class="d-flex justify-content-between align-items-center">
 			            <div class="btn-group">
-			                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+			                <a href="/tour/tourList/2" class="btn btn-primary">View</a>
 			                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 			            </div>
 			            <small class="text-muted">Incheon</small>
@@ -91,7 +83,7 @@
 			        <p class="card-text">경기도는 수도권에 위치하며 다양한 관광 명소와 레저 활동을 즐길 수 있는 대한민국의 중요한 여행지입니다.</p>
 			        <div class="d-flex justify-content-between align-items-center">
 			            <div class="btn-group">
-			                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+			                <a href="/tour/tourList/31" class="btn btn-primary">View</a>
 			                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 			            </div>
 			            <small class="text-muted">Gyeonggi-do</small>
@@ -108,7 +100,7 @@
 			        <p class="card-text">강원도는 아름다운 자연 풍경, 흥미로운 겨울 스포츠를 통해 자연과 모험을 만끽할 수 있는 곳입니다.</p>
 			        <div class="d-flex justify-content-between align-items-center">
 			            <div class="btn-group">
-			                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+			                <a href="/tour/tourList/32" class="btn btn-primary">View</a>
 			                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 			            </div>
 			            <small class="text-muted">Gangwon-do</small>
@@ -125,7 +117,7 @@
 			        <p class="card-text">경상도는 풍부한 역사와 전통문화, 아름다운 해안선, 그리고 맛있는 음식으로 가득한 대한민국의 다채로운 여행지로, 다양한 경험과 매력을 제공합니다.</p>
 			        <div class="d-flex justify-content-between align-items-center">
 			            <div class="btn-group">
-			                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+			                <a href="/tour/tourList/35" class="btn btn-primary">View</a>
 			                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 			            </div>
 			            <small class="text-muted">Gyeongsang-do</small>
@@ -142,7 +134,7 @@
 			        <p class="card-text">전라도는 아름다운 자연 경치와 전통문화가 어우러진 대한민국의 풍요로운 여행지로, 조용한 마을과 흥겨운 축제가 매력을 더합니다.</p>
 			        <div class="d-flex justify-content-between align-items-center">
 			            <div class="btn-group">
-			                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+			                <a href="/tour/tourList/37" class="btn btn-primary">View</a>
 			                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 			            </div>
 			            <small class="text-muted">Jeolla-do</small>
@@ -159,7 +151,7 @@
 			        <p class="card-text">충청도는 아름다운 산과 강, 역사적인 유산이 어우러진 대한민국의 자연과 문화를 만끽할 수 있는 매력적인 여행지로, 평화로운 풍경을 제공합니다.</p>
 			        <div class="d-flex justify-content-between align-items-center">
 			            <div class="btn-group">
-			                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+			                <a href="/tour/tourList/33" class="btn btn-primary">View</a>
 			                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 			            </div>
 			            <small class="text-muted">Chungcheong-do</small>
@@ -173,4 +165,5 @@
   
   </main>
 
-<%@ include file="layout/footer.jsp"%>
+<script src="/js/tour.js"></script>
+<%@ include file="../layout/footer.jsp"%>

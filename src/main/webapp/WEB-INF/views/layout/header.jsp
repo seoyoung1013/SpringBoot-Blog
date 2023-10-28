@@ -56,6 +56,9 @@
               <a class="nav-link" href="/showResult">오늘의 여행</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/showTour">국내 여행 리스트</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#">인기 여행자</a>
             </li>
             </ul>

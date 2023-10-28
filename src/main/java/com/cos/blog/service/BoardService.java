@@ -56,11 +56,11 @@ public class BoardService {
 	}
 	
 	@Transactional(readOnly = true)
-	public Board 작성글목록(int userId){
-		return boardRepository.findById(userId).orElseThrow(()->{
-			return new IllegalArgumentException("글 상세보기 실패 : 아이디를 찾을 수 없습니다.");
-		});
+	public Page<Board> 작성글목록(int userId, Pageable pageable) {
+	    // 사용자 ID에 해당하는 글 목록을 페이지별로 조회
+	    return boardRepository.findByUserId(userId, pageable);
 	}
+
 
 	@Transactional
 	public User 작성자정보(int userId) {
@@ -70,9 +70,6 @@ public class BoardService {
 	    });
 	}
 
-
-	
-	
 	@Transactional
 	public void 글삭제하기(int id) {
 		System.out.println("글삭제하기 : "+id);

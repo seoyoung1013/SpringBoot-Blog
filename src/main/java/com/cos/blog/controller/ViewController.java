@@ -11,7 +11,12 @@ public class ViewController {
         AIController aiController = new AIController();
         String result = aiController.getGPT3Response();
         model.addAttribute("result", result);
-
         return "result";
     }
+    
+    @GetMapping("/showTour")
+    public String showTour() {
+        return "/tour/tour";
+    }
+    
 }
