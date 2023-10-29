@@ -15,6 +15,9 @@ let index = {
 			$("#btn-show-profile").on("click", ()=>{ 
 				this.showProfile();
 			});
+			$("#btn-chatt").on("click", function() {
+				window.location.href = "/mychatt";
+			});
 		},
 
 		save: function(){
