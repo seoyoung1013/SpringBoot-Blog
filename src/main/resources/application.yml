@@ -9,11 +9,18 @@ server:
     
 spring:
   mvc:
+    static-locations: /resources/**
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
   profiles:
      include: API-KEY
+  devtools:
+    livereload:
+      enabled: true
+  freemarker:
+    cache: false
+     
       
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
