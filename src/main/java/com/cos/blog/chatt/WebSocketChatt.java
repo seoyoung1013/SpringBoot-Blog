@@ -21,21 +21,21 @@ public class WebSocketChatt {
 	
 	@OnOpen
 	public void onOpen(Session s) {
-		System.out.println("open session : " + s.toString());
+		//System.out.println("open session : " + s.toString());
 		if(!clients.contains(s)) {
 			clients.add(s);
-			System.out.println("session open : " + s);
+			//System.out.println("session open : " + s);
 		}else {
-			System.out.println("이미 연결된 session 임!!!");
+			//System.out.println("이미 연결된 session 임!!!");
 		}
 	}
 	
 	
 	@OnMessage
 	public void onMessage(String msg, Session session) throws Exception{
-		System.out.println("receive message : " + msg);
+		//System.out.println("receive message : " + msg);
 		for(Session s : clients) {
-			System.out.println("send data : " + msg);
+			//System.out.println("send data : " + msg);
 			s.getBasicRemote().sendText(msg);
 
 		}
@@ -45,7 +45,7 @@ public class WebSocketChatt {
 	
 	@OnClose
 	public void onClose(Session s) {
-		System.out.println("session close : " + s);
+		//System.out.println("session close : " + s);
 		clients.remove(s);
 	}
 }
