@@ -53,13 +53,16 @@
               <a class="nav-link" href="/">홈</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/showResult">오늘의 여행</a>
+              <a class="nav-link" href="/showResult">오늘의 추천 여행</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/showTour">국내 여행 리스트</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">인기 여행자</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/mychatt">여행자들의 공간</a>
             </li>
             </ul>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
