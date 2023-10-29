@@ -54,12 +54,13 @@ let index = {
 		
 		update: function(){
 			let id = $("#id").val();
-			
+		
 			let data = {
-					title: $("#title").val(),
-					content: $("#content").val()
+				title: $("#title").val(),
+				content: $("#content").val(),
+				travelWith: $("input[name='travelWith']:checked").val() 
 			};
-
+		
 			$.ajax({ 
 				type: "PUT",
 				url: "/api/board/"+id,
@@ -73,6 +74,7 @@ let index = {
 				alert(JSON.stringify(error));
 			}); 
 		},
+		
 		
 		replySave: function(){
 			let data = {
