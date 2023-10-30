@@ -14,9 +14,15 @@
 
 	<br /> <br />
 	<div>
-		글 번호 : <span id="id"><i>${board.id} </i></span> 작성자 : <span><i>${board.user.username} </i></span> 동행자 매칭 여부 : <span id="matchingStatus"><i>${board.travelWith == 'yes' ? '매칭 성공' : '매칭 전'}</i></span>
+		글 번호 : <span id="id">
+		<i>${board.id} </i>
+		</span> 작성자 : <span>
+		<i>${board.user.username} </i>
+		</span> 동행자 매칭 여부 : <span id="matchingStatus"><i>${board.travelWith == 'yes' ? '매칭 성공' : '매칭 전'}</i></span>	
 	</div>
-
+		<!-- 좋아요 버튼 추가 -->
+	<button id="btn-like" class="btn btn-success" onclick="toggleLike()">🤍 좋아요</button>
+	
 	<br />
 	<div>
 		<h3>${board.title}</h3>
@@ -60,6 +66,20 @@
 	</div>
 </div>
 <script src="/js/board.js"></script>
+<script>
+  var isLiked = false; // 좋아요 상태 여부를 나타내는 변수
+
+  function toggleLike() {
+    var likeButton = document.getElementById("btn-like");
+    isLiked = !isLiked; // 좋아요 상태를 토글
+
+    if (isLiked) {
+      likeButton.innerHTML = "❤좋아요"; // 하트 채워진 상태
+    } else {
+      likeButton.innerHTML = "🤍 좋아요"; // 하트 비워진 상태
+    }
+  }
+</script>
 <%@ include file="../layout/footer.jsp"%>
 
 

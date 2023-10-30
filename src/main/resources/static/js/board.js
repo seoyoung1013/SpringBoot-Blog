@@ -15,6 +15,19 @@ let index = {
 		$("#btn-show-profile").on("click", ()=>{ 
 			this.showProfile();
 		});
+		$("#btn-like").on("click", function() {
+			var heartIcon = $("#heart-icon");
+			if (heartIcon.hasClass("far")) {
+				// 아이콘을 채운 하트로 변경
+				heartIcon.removeClass("far").addClass("fas");
+			} else {
+				// 아이콘을 빈 하트로 변경
+				heartIcon.removeClass("fas").addClass("far");
+			}
+		
+			// 좋아요 버튼이 클릭되었을 때 수행할 동작을 추가하십시오.
+		});
+		
 	},
 
 	save: function(){
