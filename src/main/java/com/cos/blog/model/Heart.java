@@ -10,12 +10,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 import lombok.AccessLevel;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Getter
+@Data
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "heart")
@@ -24,14 +23,13 @@ public class Heart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "heart_id")
-    private Long id;
+    private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+	@Column(nullable = false, length = 100)
+    private int user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+	@Column(nullable = false, length = 100)
     @JoinColumn(name = "board_id")
-    private Board board;
+    private int board;
 
 }

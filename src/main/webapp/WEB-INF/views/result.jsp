@@ -3,13 +3,25 @@
 
 <main role="main">
 
-    <section class="jumbotron text-center">
-        <div class="container">
-          <h2>ChatGPT가 추천해주는 국내 여행 장소는? </h2>
-          <p class="lead text-muted" style="font-size:medium">${result}</p>
-        </div>
-      </section>
-      
-  </main>
+	<section class="probootstrap-cover overflow-hidden relative" style="background-image: url('assets/images/bg_1.jpg');" data-stellar-background-ratio="0.5" id="section-home">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row align-items-center text-center">
+				<div class="col-md">
+					<h2 class="heading mb-2 display-4 font-light probootstrap-animate">ChatGPT가 추천해주는 국내 여행 장소는?</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="probootstrap-section-half d-md-flex" id="section-about">
+		<div class="probootstrap-image probootstrap-animate" data-animate-effect="fadeIn" style="background-image: url(https://cdn.lecturernews.com/news/photo/201810/7596_19378_5522.jpg)"></div>
+		<div class="probootstrap-text">
+			<div class="probootstrap-inner probootstrap-animate" data-animate-effect="fadeInRight">
+				<h2 class="heading mb-4">${result}</h2>
+			</div>
+		</div>
+	</section>
+</main>
 
 <%@ include file="layout/footer.jsp"%>

@@ -9,7 +9,7 @@ server:
     
 spring:
   mvc:
-    static-locations: /resources/**
+    # static-locations: /resources/**
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp

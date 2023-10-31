@@ -181,6 +181,7 @@ public class UserController {
 	public String profile(@RequestParam("userId") int userId, @PageableDefault(size=3, sort="id", direction = Sort.Direction.DESC) Pageable pageable) {
 		boardContent = boardService.작성글목록(userId, pageable);
 	    userInfo = boardService.작성자정보(userId);    
+	    System.out.println(userInfo);
 	    return "redirect:/user/profile";
 	}
 	
